@@ -26,13 +26,14 @@ import fi.oamk.calorieapp.component.GenderChoices
 import fi.oamk.calorieapp.component.Heading
 import fi.oamk.calorieapp.component.IntensityList
 import fi.oamk.calorieapp.component.WeightField
+import fi.oamk.calorieapp.ui.theme.CalorieAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CaloriesTheme {
+            CalorieAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     CalorieApp(
                         modifier = Modifier.padding(innerPadding)
@@ -73,17 +74,10 @@ fun CalorieApp(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun CaloriesTheme(content: @Composable () -> Unit) {
-    MaterialTheme(
-        content = content
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun CalorieAppPreview() {
-    CaloriesTheme {
+    CalorieAppTheme {
         CalorieApp()
     }
 }
